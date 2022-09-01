@@ -1,0 +1,122 @@
+.compass {
+  display: block;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  background-color: transparent;
+  position: relative;
+  color: white;
+}
+
+.compass::before {
+  font-weight: bold;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  content: "N";
+  font-size: 14px;
+  top: -2px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.direction {
+  height: 100%;
+  width: 100%;
+  display: block;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 100%;
+}
+
+.direction-text {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  line-height: 80px;
+  display: block;
+  margin-top: -45px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.compass-span {
+  display: block;
+  line-height: normal;
+  margin-top: -24px;
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+.arrow {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+}
+
+.arrow::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 10px solid white;
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  margin-left: -5px;
+  z-index: 99;
+}
+
+.NNE {
+  transform: rotate(22.5deg);
+}
+.NE {
+  transform: rotate(45deg);
+}
+.ENE {
+  transform: rotate(67.5deg);
+}
+.E {
+  transform: rotate(90deg);
+}
+.ESE {
+  transform: rotate(112.5deg);
+}
+.SE {
+  transform: rotate(135deg);
+}
+.SSE {
+  transform: rotate(157.5deg);
+}
+.S {
+  transform: rotate(180deg);
+}
+.SSW {
+  transform: rotate(202.5deg);
+}
+.SW {
+  transform: rotate(-135deg);
+}
+.WSW {
+  transform: rotate(-114.5deg);
+}
+.W {
+  transform: rotate(-90deg);
+}
+.WNW {
+  transform: rotate(-69.5deg);
+}
+.NW {
+  transform: rotate(-45deg);
+}
+.NNW {
+  transform: rotate(-24.5deg);
+}
