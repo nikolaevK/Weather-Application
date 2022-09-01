@@ -6,7 +6,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 
 import axios from "axios";
 import { useEffect, useState } from "react";
-import "./app.css";
+import "./App.css";
 import { CityContext } from "./components/CityContext";
 
 const API_KEY = "ae99b866026b5adc4730927bf41e7681";
