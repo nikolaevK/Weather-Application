@@ -24,7 +24,7 @@ export default function HourlyCard({ data }) {
           : format(timestamp, "ha")}
       </span>
       <img
-        src={`http://openweathermap.org/img/wn/${icon}.png`}
+        src={`https://openweathermap.org/img/wn/${icon}.png`}
         className="card-img"
         alt="..."
       />
