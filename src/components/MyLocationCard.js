@@ -5,7 +5,7 @@ export default function MyLocationCard({ data }) {
   const { cityName } = useContext(CityContext);
 
   return cityName ? (
-    <a
+    <div
       className="container text-light d-flex justify-content-between"
       style={{
         width: "95%",
@@ -47,6 +47,6 @@ export default function MyLocationCard({ data }) {
           {Math.round(data.main.temp_min)}&#176;
         </div>
       </div>
-    </a>
+    </div>
   ) : null;
 }

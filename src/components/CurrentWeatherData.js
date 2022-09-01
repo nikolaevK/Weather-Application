@@ -41,7 +41,6 @@ export default function CurrentWeatherData({ data }) {
         style={{
           width: "100%",
           height: "167px",
-          backgroundColor: "white",
           borderRadius: "10px",
           backgroundColor: "rgba(28, 156, 246, 0.5)",
           border: "none",
@@ -93,7 +92,6 @@ export default function CurrentWeatherData({ data }) {
         style={{
           width: "100%",
           height: "167px",
-          backgroundColor: "white",
           borderRadius: "10px",
           backgroundColor: "rgba(28, 156, 246, 0.5)",
           border: "none",
@@ -150,7 +148,6 @@ export default function CurrentWeatherData({ data }) {
         style={{
           width: "100%",
           height: "167px",
-          backgroundColor: "white",
           borderRadius: "10px",
           backgroundColor: "rgba(28, 156, 246, 0.5)",
           border: "none",
@@ -190,7 +187,6 @@ export default function CurrentWeatherData({ data }) {
         style={{
           width: "100%",
           height: "167px",
-          backgroundColor: "white",
           borderRadius: "10px",
           backgroundColor: "rgba(28, 156, 246, 0.5)",
           border: "none",
@@ -218,7 +214,6 @@ export default function CurrentWeatherData({ data }) {
         style={{
           width: "100%",
           height: "167px",
-          backgroundColor: "white",
           borderRadius: "10px",
           backgroundColor: "rgba(28, 156, 246, 0.5)",
           border: "none",
@@ -261,7 +256,6 @@ export default function CurrentWeatherData({ data }) {
         style={{
           width: "100%",
           height: "167px",
-          backgroundColor: "white",
           borderRadius: "10px",
           backgroundColor: "rgba(28, 156, 246, 0.5)",
           border: "none",

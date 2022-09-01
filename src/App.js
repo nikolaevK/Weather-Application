@@ -21,9 +21,8 @@ function App() {
     setIsShown((current) => !current);
   };
 
-  let city = cityName;
-
   useEffect(() => {
+    let city = cityName;
     if (city) {
       axios
         .get("https://api.openweathermap.org/data/2.5/weather", {

@@ -39,7 +39,7 @@ export default function CurrentWeather({ location }) {
     </section>
   ) : (
     <div className="container d-flex justify-content-center mt-5">
-      <a href="" className="btn btn-dark" style={{ opacity: 0.8 }}>
+      <a href="/" className="btn btn-dark" style={{ opacity: 0.8 }}>
         Load Location
       </a>
     </div>

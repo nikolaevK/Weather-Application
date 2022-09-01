@@ -36,7 +36,7 @@ export default function MainPage({ location }) {
       {cityName ? (
         <div className="container d-flex justify-content-center">
           <a
-            href=""
+            href="/"
             className="btn btn-dark"
             style={{ opacity: 0.8, color: "white" }}
           >
