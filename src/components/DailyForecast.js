@@ -20,7 +20,10 @@ export default function DailyForecast({ data }) {
           : format(timestamp, "eeee").slice(0, 3)}
       </div>
       <span className="col-2">
-        <img src={`http://openweathermap.org/img/wn/${icon}.png`} alt="/icon" />
+        <img
+          src={`https://openweathermap.org/img/wn/${icon}.png`}
+          alt="/icon"
+        />
       </span>
       <div className="col-2">{minTemp}&deg;</div>
       <div className="col-4 p-0">
