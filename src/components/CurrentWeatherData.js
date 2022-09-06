@@ -62,11 +62,15 @@ export default function CurrentWeatherData({ data }) {
           </div>
           <div className="card-text h3">{uvIndex}</div>
           <div className="mb-3 h3">
-            {uvIndex >= 2 || uvIndex === 0
+            {uvIndex >= 1 && uvIndex <= 2
               ? "Low"
-              : uvIndex >= 5
+              : uvIndex >= 3 && uvIndex <= 5
               ? "Moderate"
-              : "High"}
+              : uvIndex >= 6 && uvIndex <= 7
+              ? "High"
+              : uvIndex >= 8
+              ? "Very High"
+              : ""}
           </div>
           <ProgressBar>
             <ProgressBar
