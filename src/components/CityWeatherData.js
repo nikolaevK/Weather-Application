@@ -1,5 +1,3 @@
-import React, { useContext } from "react";
-import { CityContext } from "./CityContext";
 import { BsWind } from "react-icons/bs";
 import { WiHumidity } from "react-icons/wi";
 import { MdOutlineVisibility } from "react-icons/md";

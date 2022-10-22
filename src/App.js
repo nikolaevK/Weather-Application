@@ -2,7 +2,7 @@ import CurrentWeather from "./components/CurrentWeather";
 import MainPage from "./components/MainPage";
 import { Button } from "react-bootstrap";
 import { GiHamburgerMenu } from "react-icons/gi";
-import toast, { Toaster } from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "./App.css";

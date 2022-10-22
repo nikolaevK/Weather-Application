@@ -8,7 +8,7 @@ export default function MainPage({ location }) {
   const [citiesData, setCitiesData] = useState(
     JSON.parse(localStorage.getItem("cityData")) || []
   );
-  console.log("MainPage", citiesData);
+
   useEffect(() => {
     localStorage.setItem("cityData", JSON.stringify(citiesData));
   }, [citiesData]);
@@ -18,6 +18,7 @@ export default function MainPage({ location }) {
       ...[...new Map(citiesData.map((arr) => [arr.id, arr])).values()],
       location,
     ]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location]);
 
   function deleteCity(id) {
