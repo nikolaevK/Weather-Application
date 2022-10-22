@@ -1,9 +1,8 @@
 import CurrentWeather from "./components/CurrentWeather";
 import MainPage from "./components/MainPage";
-import ForecastWeather from "./components/ForecastWeather.js";
 import { Button } from "react-bootstrap";
 import { GiHamburgerMenu } from "react-icons/gi";
-
+import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "./App.css";
@@ -20,6 +19,10 @@ function App() {
   const handleClick = () => {
     setIsShown((current) => !current);
   };
+
+  // useEffect(() => {
+  //   toast.loading("Loading Data");
+  // }, []);
 
   useEffect(() => {
     let city = cityName;
@@ -75,6 +78,7 @@ function App() {
           })
           .then((response) => {
             setLocation(response.data);
+            // toast.dismiss();
             setBlur("");
           })
           .catch((e) => {
@@ -85,44 +89,51 @@ function App() {
   }, [cityName]);
 
   return (
-    <div className={blur}>
-      <CityContext.Provider value={{ cityName, setCityName }}>
-        <div className="container-flued">
-          {isShown && <MainPage location={location} />}
-          {isShown === false && <CurrentWeather location={location} />}
-          {isShown === false && <ForecastWeather />}
+    <>
+      <Toaster />
+      <div className={blur}>
+        <CityContext.Provider value={{ cityName, setCityName }}>
           <div
+            className="container-flued"
             style={{
-              position: "fixed",
-              left: "0",
-              bottom: "0",
-              width: "100%",
-              height: "3rem",
-              backgroundColor: "rgba(28, 156, 246, .7)",
+              paddingBottom: "12rem",
             }}
           >
-            <Button
-              variant="dark"
-              size="sm"
+            {isShown && <MainPage location={location} />}
+            {isShown === false && <CurrentWeather location={location} />}
+            <div
               style={{
-                paddingLeft: "18px",
-                paddingRight: "18px",
-                marginLeft: "10px",
-                marginTop: "10px",
-                opacity: ".8",
+                position: "fixed",
+                left: "0",
+                bottom: "0",
+                width: "100%",
+                height: "3rem",
+                backgroundColor: "rgba(28, 156, 246, .7)",
               }}
-              onClick={handleClick}
             >
-              <GiHamburgerMenu
+              <Button
+                variant="dark"
+                size="sm"
                 style={{
-                  marginBottom: "2px",
+                  paddingLeft: "18px",
+                  paddingRight: "18px",
+                  marginLeft: "10px",
+                  marginTop: "10px",
+                  opacity: ".8",
                 }}
-              />
-            </Button>
+                onClick={handleClick}
+              >
+                <GiHamburgerMenu
+                  style={{
+                    marginBottom: "2px",
+                  }}
+                />
+              </Button>
+            </div>
           </div>
-        </div>
-      </CityContext.Provider>
-    </div>
+        </CityContext.Provider>
+      </div>
+    </>
   );
 }
 

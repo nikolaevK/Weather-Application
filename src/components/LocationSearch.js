@@ -13,7 +13,10 @@ export default function LocationSearch() {
   };
 
   return (
-    <div className="container mb-4" style={{ color: "white" }}>
+    <div
+      className="container p-0"
+      style={{ color: "white", marginBottom: "4rem" }}
+    >
       <h1>Weather</h1>
       <Form onSubmit={handleSubmit}>
         <Form.Control

@@ -5,6 +5,7 @@ import DailyForecast from "./DailyForecast";
 import CurrentWeatherData from "./CurrentWeatherData";
 import { CityContext } from "./CityContext";
 import { FaRegCalendarAlt } from "react-icons/fa";
+import { toast } from "react-hot-toast";
 
 export default function ForecastWeather() {
   const API_KEY = "ae99b866026b5adc4730927bf41e7681";
@@ -16,6 +17,7 @@ export default function ForecastWeather() {
   const { cityName } = useContext(CityContext);
 
   useEffect(() => {
+    toast.loading("Loading Data");
     navigator.geolocation.getCurrentPosition(positionSuccess, positionError);
 
     function positionSuccess({ coords }) {
@@ -41,6 +43,7 @@ export default function ForecastWeather() {
           parseHourlyWeather(data);
           parseDailyWeather(data);
           parseCurrentWeatherData(data);
+          toast.dismiss();
         })
         .catch((e) => {
           console.log(e);
@@ -49,75 +52,77 @@ export default function ForecastWeather() {
   }, []);
 
   if (hourlyData.length > 1 && dailyData.length > 1) {
-    return !cityName ? (
-      <>
-        <div
-          className="container hour-card-slider"
-          style={{
-            display: "flex",
-            backgroundColor: "rgba(28, 156, 246, 0.5)",
-            width: "90%",
-            borderRadius: "8px",
-            flexWrap: "nowrap",
-            overflowX: "auto",
-            padding: "10px",
-            marginTop: "21rem",
-          }}
-        >
-          {hourlyData.slice(0, 25).map((hour) => {
-            return <HourlyCard data={hour} key={hour.timestamp} />;
-          })}
-        </div>
-        <div
-          className="container"
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            backgroundColor: "rgba(28, 156, 246, 0.5)",
-            width: "90%",
-            borderRadius: "8px",
-            padding: "5px",
-            marginTop: "10px",
-          }}
-        >
-          <span
+    return (
+      !cityName && (
+        <>
+          <div
+            className="container hour-card-slider"
             style={{
-              borderBottom: "1px solid rgba(255, 255, 255, 0.4)",
-              width: "95%",
-              color: "rgba(255, 255, 255, 0.7)",
-              fontSize: ".8rem",
-              paddingLeft: "10px",
+              display: "flex",
+              backgroundColor: "rgba(28, 156, 246, 0.5)",
+              width: "90%",
+              borderRadius: "8px",
+              flexWrap: "nowrap",
+              overflowX: "auto",
+              padding: "10px",
+              marginTop: "21rem",
             }}
           >
-            <FaRegCalendarAlt
-              style={{ verticalAlign: "baseline", marginRight: "10px" }}
-            />
-            7-DAY FORECAST
-          </span>
-          {dailyData.map((day) => {
-            return <DailyForecast data={day} key={day.timestamp} />;
-          })}
-        </div>
-        <div
-          className="container"
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            backgroundColor: "transparent",
-            width: "90%",
-            borderRadius: "8px",
-            padding: "0",
-            marginTop: "10px",
-          }}
-        >
-          <CurrentWeatherData data={currentDay} />
-        </div>
-      </>
-    ) : null;
+            {hourlyData.slice(0, 25).map((hour) => {
+              return <HourlyCard data={hour} key={hour.timestamp} />;
+            })}
+          </div>
+          <div
+            className="container"
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              backgroundColor: "rgba(28, 156, 246, 0.5)",
+              width: "90%",
+              borderRadius: "8px",
+              padding: "5px",
+              marginTop: "10px",
+            }}
+          >
+            <span
+              style={{
+                borderBottom: "1px solid rgba(255, 255, 255, 0.4)",
+                width: "95%",
+                color: "rgba(255, 255, 255, 0.7)",
+                fontSize: ".8rem",
+                paddingLeft: "10px",
+              }}
+            >
+              <FaRegCalendarAlt
+                style={{ verticalAlign: "baseline", marginRight: "10px" }}
+              />
+              7-DAY FORECAST
+            </span>
+            {dailyData.map((day) => {
+              return <DailyForecast data={day} key={day.timestamp} />;
+            })}
+          </div>
+          <div
+            className="container"
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              backgroundColor: "transparent",
+              width: "90%",
+              borderRadius: "8px",
+              padding: "0",
+              marginTop: "10px",
+            }}
+          >
+            <CurrentWeatherData data={currentDay} />
+          </div>
+        </>
+      )
+    );
   }
 
   function parseHourlyWeather({ hourly, current }) {

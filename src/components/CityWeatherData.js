@@ -7,9 +7,7 @@ import { FaTemperatureHigh } from "react-icons/fa";
 import "./wind.css";
 
 export default function CityWeatherData({ data }) {
-  const { cityName } = useContext(CityContext);
-
-  return cityName ? (
+  return (
     <div
       style={{
         display: "grid",
@@ -17,7 +15,7 @@ export default function CityWeatherData({ data }) {
         gap: "10px",
         justifyContent: "space-between",
         width: "100%",
-        marginBottom: "4rem",
+        marginTop: "30px",
       }}
     >
       <div
@@ -174,7 +172,7 @@ export default function CityWeatherData({ data }) {
         </div>
       </div>
     </div>
-  ) : null;
+  );
 }
 
 function convertWindDegrees(windDirection) {
