@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import CityWeatherData from "./CityWeatherData";
+import IndividualCityForecast from "./IndividualCityForecast";
 
 export default function MyLocationCard({ data }) {
   const [details, setDitails] = useState(false);
@@ -56,8 +56,8 @@ export default function MyLocationCard({ data }) {
         </div>
       </div>
       {details && (
-        <div className="container p-0 mb-5">
-          <CityWeatherData data={data} />
+        <div className="container p-0">
+          <IndividualCityForecast locationData={data} />
         </div>
       )}
     </>

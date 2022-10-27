@@ -3,6 +3,7 @@ import LocationSearch from "./LocationSearch";
 import MyLocationCard from "./MyLocationCard";
 import { CityContext } from "./CityContext";
 import { AiOutlineCloseCircle } from "react-icons/ai";
+
 export default function MainPage({ location }) {
   const { cityName } = useContext(CityContext);
   const [citiesData, setCitiesData] = useState(

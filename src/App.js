@@ -20,10 +20,6 @@ function App() {
     setIsShown((current) => !current);
   };
 
-  // useEffect(() => {
-  //   toast.loading("Loading Data");
-  // }, []);
-
   useEffect(() => {
     let city = cityName;
     if (city) {
@@ -78,7 +74,6 @@ function App() {
           })
           .then((response) => {
             setLocation(response.data);
-            // toast.dismiss();
             setBlur("");
           })
           .catch((e) => {
