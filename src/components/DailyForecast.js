@@ -8,7 +8,7 @@ export default function DailyForecast({ data }) {
 
   return (
     <div
-      className="row row-col-12 text-light align-items-center gx-5"
+      className="row row-col-12 text-light align-items-center gx-3"
       style={{
         borderBottom: "1px solid rgba(255, 255, 255, 0.4)",
         width: "95%",
@@ -34,7 +34,9 @@ export default function DailyForecast({ data }) {
           now={dayTemp}
         />
       </div>
-      <div className="col-2">{maxTemp}&deg;</div>
+      <div className="col-2" style={{ textAlign: "end" }}>
+        {maxTemp}&deg;
+      </div>
     </div>
   );
 }
