@@ -1,6 +1,9 @@
 # Weather App
-> A mobile ready web applications based on OpenWeather API. The app provides simple user interface with ability to see daily and weekly weather at any location around the world.
+> A mobile ready web application based on OpenWeather API. The app provides a simple user interface with ability to see daily and weekly weather forecast at any location around the world.
 > Live demo [_here_](https://frabjous-torte-84eace.netlify.app/).
+
+## Screenshots
+![Example screenshot](./weather_app.png)
 
 ## Technologies Used
 <img src="https://github.com/devicons/devicon/blob/master/icons/react/react-original-wordmark.svg" title="React" alt="React" width="40" height="40"/>&nbsp;
@@ -10,7 +13,7 @@
 <img src="https://github.com/devicons/devicon/blob/master/icons/bootstrap/bootstrap-original.svg" title="bootstrap" alt="bootstrap" width="40" height="40"/>&nbsp;
 
 ## Features
-- Local Storage to store your prefered locations
+- Local Storage to store your preferred locations
 - Search any city in the world with detailed weather forecast 
 - Daily and weekly forecast 
 - Sunset and sunrise times for every day
