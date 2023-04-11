@@ -1,5 +1,22 @@
-# Getting Started with Create React App
+# Weather App
+> A mobile ready web applications based on OpenWeather API. The app provides simple user interface with ability to see daily and weekly weather at any location around the world.
+> Live demo [_here_](https://frabjous-torte-84eace.netlify.app/).
 
+## Technologies Used
+<img src="https://github.com/devicons/devicon/blob/master/icons/react/react-original-wordmark.svg" title="React" alt="React" width="40" height="40"/>&nbsp;
+<img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-plain-wordmark.svg"  title="CSS3" alt="CSS" width="40" height="40"/>&nbsp;
+<img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-original.svg" title="HTML5" alt="HTML" width="40" height="40"/>&nbsp;
+<img src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-original.svg" title="JavaScript" alt="JavaScript" width="40" height="40"/>&nbsp;
+<img src="https://github.com/devicons/devicon/blob/master/icons/bootstrap/bootstrap-original.svg" title="bootstrap" alt="bootstrap" width="40" height="40"/>&nbsp;
+
+## Features
+- Local Storage to store your prefered locations
+- Search any city in the world with detailed weather forecast 
+- Daily and weekly forecast 
+- Sunset and sunrise times for every day
+- Wind direction and speed, UV index, visibility and humidity for every day
+
+## Setup
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
